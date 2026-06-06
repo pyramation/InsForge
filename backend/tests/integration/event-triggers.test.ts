@@ -70,6 +70,6 @@ describe('auto-RLS event triggers', () => {
     const policyNames = rows.map((r: { policyname: string }) => r.policyname);
     expect(policyNames).toContain('custom_policy');
     const adminCount = policyNames.filter((n: string) => n === 'project_admin_policy').length;
-    expect(adminCount).toBeLessThanOrEqual(1);
+    expect(adminCount).toBe(1);
   });
 });
